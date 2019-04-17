@@ -118,10 +118,10 @@ public class AmazonSearchPage {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 		LocalDate localDate = LocalDate.now(); 
-		System.out.println(dtf.format(localDate));
+		//System.out.println(dtf.format(localDate));
 		
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		System.out.println("Test: "+timestamp);
+		//System.out.println("Test: "+timestamp);
 		
 		@SuppressWarnings("deprecation") 
 		 int str = timestamp.getHours();
