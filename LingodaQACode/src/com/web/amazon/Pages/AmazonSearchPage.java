@@ -5,6 +5,10 @@ package com.web.amazon.Pages;
 
 //importing required packages
 import java.io.File;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -14,7 +18,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.web.amazon.ObjectRepository.AmazonSearchObject;
 
-//Class 'AmazonSearchPage'  
+ 
 public class AmazonSearchPage {
     //Variable declaration
 	public static WebDriver driver;
@@ -109,12 +113,28 @@ public class AmazonSearchPage {
 	*           filename - It is used to create a individual screenshot file.
 	*           driver - driver object*/
 	public static File captureScreenshot(String FolderName,String filename, WebDriver driver) {
-		
-		long t = System.currentTimeMillis();
+	
 		File file = null;
 		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+		LocalDate localDate = LocalDate.now(); 
+		System.out.println(dtf.format(localDate));
+		
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		System.out.println("Test: "+timestamp);
+		
+		@SuppressWarnings("deprecation") 
+		 int str = timestamp.getHours();
+		  
+		 @SuppressWarnings("deprecation") 
+		 int str1 = timestamp.getMinutes();
+		  
+		 @SuppressWarnings("deprecation") 
+		 int str2 = timestamp.getSeconds();
+		 String str4 = str+"-"+str1+"-"+str2;
+		
 		try {
-			String filePath = System.getProperty("user.dir")+"\\Screenshots\\"+FolderName;
+			String filePath = System.getProperty("user.dir")+"\\Screenshots\\"+FolderName+localDate;
 			File folder = new File(filePath);
 			if (!folder.exists()) {
 				boolean result = false;
@@ -128,7 +148,7 @@ public class AmazonSearchPage {
 					//System.out.println("Folder with name " + filename + " created");
 				}
 			}
-			file = new File(folder + "//" + filename +t+".jpg");
+			file = new File(folder + "//" + filename +str4+".jpg");
 			if (file.exists()) {
 				if(file.delete()) {
 					File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

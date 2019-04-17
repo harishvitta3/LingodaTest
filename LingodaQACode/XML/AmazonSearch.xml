@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Automation Suite" thread-count="15" parallel="tests">
+
 	 <test name="AMAZON Search" enabled="true">
+	 
 		<classes>
-		    <class name="com.web.amazon.TestScripts.AmazonSearch" />
+		    <class name = "com.web.amazon.TestScripts.AmazonSearch"/>
 		</classes>
+		
 	</test> 
 </suite>

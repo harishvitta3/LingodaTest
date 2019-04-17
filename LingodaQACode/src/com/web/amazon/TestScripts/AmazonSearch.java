@@ -1,5 +1,5 @@
 //Main Script Package
-//This package is used to create main test using the resusable functions
+//This package is used to create main test using the reusable functions
 package com.web.amazon.TestScripts;
 
 //Import required packages
@@ -17,7 +17,7 @@ import com.web.amazon.ObjectRepository.AmazonSearchObject;
 import com.web.amazon.Pages.AmazonSearchPage;
 import com.web.amazon.Utility.ExcelReader;
 
-//Class "AmazonSearch"
+
 public class AmazonSearch {
 
 	//variable declaration
@@ -27,7 +27,6 @@ public class AmazonSearch {
 	public static String SrchValue=tData.get("SearchValue");
 	public static String ScreenshotFolder=tData.get("FolderName");
 	
-	//Testng Annotations
 	@BeforeMethod
 	public static void lanuchUrl() {
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\Drivers\\chromedriver.exe");
