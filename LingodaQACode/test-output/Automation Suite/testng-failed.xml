@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="15" name="Failed suite [Automation Suite]" parallel="tests">
+  <test name="AMAZON Search(failed)" parallel="tests">
+    <classes>
+      <class name="com.web.amazon.TestScripts.AmazonSearch">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="lanuchUrl"/>
+          <include name="amazonsearch"/>
+        </methods>
+      </class> <!-- com.web.amazon.TestScripts.AmazonSearch -->
+    </classes>
+  </test> <!-- AMAZON Search(failed) -->
+</suite> <!-- Failed suite [Automation Suite] -->
